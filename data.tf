@@ -21,6 +21,7 @@ data "aws_secretsmanager_secret_version" "secrete_version" {
   secret_id = data.aws_secretsmanager_secret.secretes.id
 }
 
+# fect ami dynamically 
 data "aws_ami" "ami" {
   most_recent = true
   name_regex = "devops-ami"
