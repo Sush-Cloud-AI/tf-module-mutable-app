@@ -14,8 +14,6 @@ resource "null_resource" "app" {
     }
     inline = [ 
         "pwd"
-        # need to upadate the ansible pull command
-
-     ]
+        ]
   }
 }
