@@ -1,4 +1,8 @@
 resource "null_resource" "app" {
+    triggers = {
+        always_run ="${timestamp()}"
+        ## will always run the provisioner, rather than refresh as the time stamp changes evry second
+    }
   count = local.INSTANCE_COUNT
 
   provisioner "remote-exec" {
