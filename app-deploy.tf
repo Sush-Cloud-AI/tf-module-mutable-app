@@ -13,7 +13,8 @@ resource "null_resource" "app" {
       host = element(local.INSTANCE_PRIVATE_IPS, count.index)
     }
     inline = [ 
-        "echo hai"
+        "pwd"
+        # need to upadate the ansible pull command
 
      ]
   }
