@@ -5,7 +5,7 @@ resource "aws_spot_instance_request" "spot" {
   #spot_price    = "0.03"
   instance_type = var.SPOT_INSTANCE_TYPE
   wait_for_fulfillment = true
-  #spot_type = "one-time"
+  spot_type = "one-time"
   vpc_security_group_ids = [aws_security_group.allows_app.id]
   subnet_id = element(data.terraform_remote_state.vpc.outputs.PRIVATE_SUBNET_IDS, count.index)
 
