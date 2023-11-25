@@ -1,3 +1,4 @@
+# create alistner and add to the private alb
 resource "aws_lb_listener" "private" {
     count = var.INTERNAL ? 1 : 0
   load_balancer_arn = data.terraform_remote_state.alb.outputs.arn.PRIVATE_ALB_ARN
