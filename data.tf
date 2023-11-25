@@ -10,6 +10,16 @@ data "terraform_remote_state" "vpc" {
   
 }
 
+# to fectch information from alb
+data "terraform_remote_state" "alb" {
+    backend = "s3"
+    config = {
+        bucket = "my-bucket-tfstate-sus"
+        key    = "alb/${var.ENV}/terraform.tfvars"
+        region = "us-east-1"
+    }
+
+}
 ## to fetech the infromation of the secrete
 data "aws_secretsmanager_secret" "secretes" {
   name = "robot/secretes"
