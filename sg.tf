@@ -1,7 +1,7 @@
 # Creates Security Group
 resource "aws_security_group" "allows_app" {
-  name        = "roboshop-${var.ENV}-${var.ENV}"
-  description = "roboshop-${var.ENV}-${var.ENV}"
+  name        = "roboshop-${var.COMPONENT}-${var.ENV}"
+  description = "roboshop-${var.COMPONENT}-${var.ENV}"
   vpc_id      = data.terraform_remote_state.vpc.outputs.VPC_ID
 
 
@@ -30,6 +30,6 @@ resource "aws_security_group" "allows_app" {
   }
 
   tags = {
-    Name = "roboshop-${var.ENV}-docdb-sg"
+     Name = "roboshop-${var.COMPONENT}-${var.ENV}"
   }
 }
